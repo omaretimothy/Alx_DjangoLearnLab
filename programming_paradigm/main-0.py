@@ -4,7 +4,7 @@ from bank_account import BankAccount
 def main():
     account = BankAccount(100)  # Example starting balance
     if len(sys.argv) < 2:
-        print("Usage: python main.py <command>:<amount>")
+        print("Usage: python main0.py <command>:<amount>")
         print("Commands: deposit, withdraw, display")
         sys.exit(1)
 

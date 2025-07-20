@@ -1,5 +1,8 @@
 from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView
+from .views import add_book
+from .views import edit_book
+from .views import delete_book
 from . import views
 from .views import (
     list_books,
@@ -10,16 +13,20 @@ from .views import (
 )
 
 urlpatterns = [
-    # ✅ Existing FBV + CBV
+    # Existing FBV + CBV
     path('books/', list_books, name='list_books'),
     path('library/<int:pk>/', LibraryDetailView.as_view(), name='library_detail'),
 
-    # ✅ Authentication routes
+    path('books/add/', add_book, name='add_book'),
+    path('books/<int:book_id>/edit/', edit_book, name='edit_book'),
+    path('books/<int:book_id>/delete/', delete_book, name='delete_book'),
+
+    # Authentication routes
     path('register/', views.register_view, name='register'),  # checker expects `views.register`
     path('login/', LoginView.as_view(template_name='relationship_app/login.html'), name='login'),
     path('logout/', LogoutView.as_view(template_name='relationship_app/logout.html'), name='logout'),
 
-    # ✅ Role-based routes
+    # Role-based routes
     path('role/admin/', admin_view, name='admin_view'),
     path('role/librarian/', librarian_view, name='librarian_view'),
     path('role/member/', member_view, name='member_view'),

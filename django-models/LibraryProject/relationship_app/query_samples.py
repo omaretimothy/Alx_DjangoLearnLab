@@ -2,8 +2,8 @@ from .models import Author, Book, Library, Librarian
 
 # 1. Query all books by a specific author
 author_name = "George Orwell"
-specific_author = Author.objects.get(name=author_name)
-books_by_author = Book.objects.filter(author=specific_author)
+author = Author.objects.get(name=author_name)
+books_by_author = Book.objects.filter(author=author)
 print("Books by", author_name, ":", list(books_by_author))
 
 # 2. List all books in a library

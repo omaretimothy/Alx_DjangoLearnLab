@@ -10,7 +10,7 @@ from django.http import HttpResponseForbidden
 from django import forms
 from .models import Book
 from .models import Library
-from .models import UserProfile
+from bookshelf.models import UserProfile
 from django.contrib.auth import get_user_model
 User = get_user_model()
 

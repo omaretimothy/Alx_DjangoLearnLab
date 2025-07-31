@@ -15,6 +15,14 @@ class Book(models.Model):
         return self.title
     class Meta:
         permissions = [
+
+            # New permissions required
+            ("can_view", "Can view book"),
+            ("can_create", "Can create book"),
+            ("can_edit", "Can edit book"),
+            ("can_delete", "Can delete book"),
+
+            #previous permissions for  backward compatibility
             ("can_add_book", "Can add a book"),
             ("can_change_book", "Can change a book"),
             ("can_delete_book", "Can delete a book"),

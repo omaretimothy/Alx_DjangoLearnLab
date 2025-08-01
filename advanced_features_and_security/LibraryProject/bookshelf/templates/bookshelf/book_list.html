@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Bookshelf — Books</title></head>
+<body>
+  <h1>Books</h1>
+  <ul>
+    {% for b in books %}
+      <li>{{ b.title }} — {{ b.author }} ({{ b.publication_year }})</li>
+    {% empty %}
+      <li>No books yet.</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

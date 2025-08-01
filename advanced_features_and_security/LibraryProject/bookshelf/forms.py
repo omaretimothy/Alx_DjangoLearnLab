@@ -1,6 +1,11 @@
 from django import forms
 from .models import Book
 
+# A basic form for testing or demonstration purposes
+class ExampleForm(forms.Form):
+    name = forms.CharField(max_length=100, label="Your Name")
+    message = forms.CharField(widget=forms.Textarea, label="Message")
+
 class BookSearchForm(forms.Form):
     query = forms.CharField(
         max_length=100,

@@ -5,6 +5,7 @@ from .models import Book
 from .serializers import BookSerializer
 from rest_framework import generics, filters
 from django_filters.rest_framework import DjangoFilterBackend
+from django_filters import rest_framework
 
 # GET /books/ — List all books (open to all users)
 class BookListView(generics.ListAPIView):
